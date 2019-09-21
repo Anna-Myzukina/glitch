@@ -1,0 +1,170 @@
+.box{
+    --glitch-width: 80vmax;
+    --glitch-height: calc(80vmax * 1.25); 
+}
+.glitch{
+    position: relative;
+    width: var(--glitch-width);
+    max-width: 900px;
+    height: var(--glitch-height);
+    max-height: calc(500px * 1.25);
+    margin: 0 auto;
+    overflow: hidden;
+    --gap-horizontal: 5px;
+    --gap-vertical: 20px;
+    --time-anim: 5s;
+    --blend-mode-1: none;
+    --blend-mode-2: exclusion;
+    --blend-mode-3: hard-light;
+    --blend-mode-4: overlay;
+    --blend-mode-5: none;
+    --blend-color-1: transparent;
+    --blend-color-2: #52f1cd;
+    --blend-color-3: #525df1;
+    --blend-color-4: #f19b52;
+    --blend-color-5: transparent;
+}
+.img_glitch{
+    position: absolute;
+    top: calc(-1 * var(--gap-vertical));
+    left: calc(-1 * var(--gap-horizontal));
+    width: calc(100% + var(--gap-horizontal) * 2);
+    height: calc(100% + var(--gap-vertical) * 2);
+    background-size: cover;
+    transform: translate3d(0, 0, 0, 0,);
+    background-blend-mode: var(--blend-color-1);
+}
+.img_glitch:nth-child(1){
+    background: url(https://beta.url2png.com/v6/P320EB815A7574F/9deb57a46486902bca14523abc633390/png/?url=https%3A%2F%2Fwww.microverse.org%2F&force=false&fullpage=false&thumbnail_max_width=1200&viewport=1280x1024) no-repeat 50% 0;
+}
+.img_glitch:nth-child(2){
+    background-color: var(--blend-color-2);
+    background-blend-mode: var(--blend-color-2);
+}
+.img_glitch:nth-child(3){
+    background-color: var(--blend-color-3);
+    background-blend-mode: var(--blend-color-3);
+}
+.img_glitch:nth-child(4){
+    background-color: var(--blend-color-4);
+    background-blend-mode: var(--blend-color-4);
+}
+.img_glitch:nth-child(5){
+    background-color: var(--blend-color-5);
+    background-blend-mode: var(--blend-color-5);
+}
+.img_glitch:nth-child(n+2){
+    opacity: 0;
+}
+.glitch:hover .img_glitch:nth-child(n+2){
+    opacity: 1;
+}
+.glitch:hover .img_glitch:nth-child(2){
+    transform: translate3d(var(--gap-horizontal),0,0);
+    animation: glitch-anim-1 var(--time-anim) infinite linear alternate;
+}
+.glitch:hover .img_glitch:nth-child(3){
+    transform: translate3d(-1 * var(--gap-horizontal),0,0);
+    animation: glitch-anim-2 var(--time-anim) infinite linear alternate;
+}
+.glitch:hover .img_glitch:nth-child(4){
+    transform: translate3d(0, calc(-1 * var(--gap-vertical)),0) scale3d(-1, -1, 1);
+    animation: glitch-anim-3 var(--time-anim) infinite linear alternate;
+}
+
+@keyframes glitch-anim-1{
+    0%{
+        clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%);
+    }
+    10%{
+        clip-path: polygon(0 15%, 100% 15%, 100% 15%, 0 15%);
+    }
+    20%{
+        clip-path: polygon(0 10%, 100% 10%, 100% 20%, 0 25%);
+    }
+    40%{
+        clip-path: polygon(0 33%, 100% 33%, 100% 33%, 0 33%);
+    }
+    50%{
+        clip-path: polygon(0 44%, 100% 44%, 100% 44%, 0 44%);
+    }
+    60%{
+        clip-path: polygon(0 50%, 100% 50%, 100% 50%, 0 50%);
+    }
+    70%{
+        clip-path: polygon(0 70%, 100% 70%, 100% 70%, 0 70%);
+    }
+    80%{
+        clip-path: polygon(0 80%, 100% 80%, 100% 80%, 0 80%);
+    }
+    90%{
+        clip-path: polygon(0 50%, 100% 50%, 100% 55%, 0 55%);
+    }
+    100%{
+        clip-path: polygon(0 70%, 100% 70%, 100% 80%, 0 80%);
+    }
+}
+@keyframes glitch-anim-2{
+    0%{
+        clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%);
+    }
+    10%{
+        clip-path: polygon(0 15%, 100% 15%, 100% 15%, 0 15%);
+    }
+    20%{
+        clip-path: polygon(0 10%, 100% 10%, 100% 20%, 0 25%);
+    }
+    40%{
+        clip-path: polygon(0 33%, 100% 33%, 100% 33%, 0 33%);
+    }
+    50%{
+        clip-path: polygon(0 44%, 100% 44%, 100% 44%, 0 44%);
+    }
+    60%{
+        clip-path: polygon(0 50%, 100% 50%, 100% 50%, 0 50%);
+    }
+    70%{
+        clip-path: polygon(0 70%, 100% 70%, 100% 70%, 0 70%);
+    }
+    80%{
+        clip-path: polygon(0 80%, 100% 80%, 100% 80%, 0 80%);
+    }
+    90%{
+        clip-path: polygon(0 50%, 100% 50%, 100% 55%, 0 55%);
+    }
+    100%{
+        clip-path: polygon(0 70%, 100% 70%, 100% 80%, 0 80%);
+    }
+}
+@keyframes glitch-anim-3{
+    0%{
+        clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%);
+    }
+    10%{
+        clip-path: polygon(0 15%, 100% 15%, 100% 15%, 0 15%);
+    }
+    20%{
+        clip-path: polygon(0 10%, 100% 10%, 100% 20%, 0 25%);
+    }
+    40%{
+        clip-path: polygon(0 33%, 100% 33%, 100% 33%, 0 33%);
+    }
+    50%{
+        clip-path: polygon(0 44%, 100% 44%, 100% 44%, 0 44%);
+    }
+    60%{
+        clip-path: polygon(0 50%, 100% 50%, 100% 50%, 0 50%);
+    }
+    70%{
+        clip-path: polygon(0 70%, 100% 70%, 100% 70%, 0 70%);
+    }
+    80%{
+        clip-path: polygon(0 80%, 100% 80%, 100% 80%, 0 80%);
+    }
+    90%{
+        clip-path: polygon(0 50%, 100% 50%, 100% 55%, 0 55%);
+    }
+    100%{
+        clip-path: polygon(0 70%, 100% 70%, 100% 80%, 0 80%);
+    }
+}
